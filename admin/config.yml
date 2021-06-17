@@ -14,6 +14,7 @@ collections:
   files:
     - label: "Homepage"
       name: "home"
+      file: "site/content/homepage.yml"
       fields:
         - {label: Title, name: title, widget: string}
         - {label: Intro, name: intro, widget: markdown}
