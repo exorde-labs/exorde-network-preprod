@@ -17,11 +17,44 @@ collections:
       file: "site/content/homepage.yml"
       fields:
         - {label: Title, name: title, widget: string}
-        - {label: Intro, name: intro, widget: markdown}
-        - label: Section
-          name: section
+        - {label: Intro, name: intro, widget: text}
+        - label: News
+          name: news
           widget: list
+          required: false
           fields:
             - {label: Title, name: title, widget: string}
-            - {label: Subtitle, name: subtitle, widget: string}
-            - {label: Photo, name: photo, widget: image}
+            - {label: Credibility, name: credibility, widget: number}
+            - {label: Image, name: image, widget: image}
+        - label: Stats
+          name: stats
+          widget: list
+          required: false
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Number, name: number, widget: number}
+            - {label: Description, name: description, widget: text}
+        - label: Sections
+          name: sections
+          widget: list
+          required: false
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Keyword, name: keyword, widget: string}
+            - {label: Description, name: description, widget: text}
+            - {label: Background color, name: background_color, widget: color}
+            - {label: Title color, name: title_color, widget: color}
+            - {label: Keyword color, name: keyword_color, widget: color}
+            - label: Cards
+              name: cards
+              widget: list
+              fields:
+                - {label: Title, name: title, widget: string}
+                - {label: Description, name: description, widget: markdown}
+                - {label: Icon, name: icon, widget: image}
+                - {label: Button Label, name: button_label, widget: string}
+                - {label: Align, name: align, widget: select, options: ["left", "alternate", "right"]}
+                - {label: Icon color, name: icon_color, widget: color}
+                - {label: Title color, name: title_color, widget: color}
+                - {label: Description color, name: description_color, widget: color}
+                - {label: Button background color, name: button_background_color, widget: color}
