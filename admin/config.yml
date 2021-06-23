@@ -8,19 +8,38 @@ public_folder: /img
 
 publish_mode: editorial_workflow
 
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: multiple_folders
+
+  # Required - a list of locales to show in the editor UI
+  locales: [en, fr]
+
+  # Optional, defaults to the first item in locales.
+  # The locale to be used for fields validation and as a baseline for the entry.
+  default_locale: en
+
 collections:
 - label: "Pages"
   name: "pages"
+  i18n:
+      structure: single_file
+      locales: [en, fr]
   files:
     - label: "Homepage"
       name: "home"
       file: "site/content/homepage.yml"
+      i18n: true
       fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Intro, name: intro, widget: text}
+        - {label: Title, name: title, widget: string, i18n: true}
+        - {label: Intro, name: intro, widget: text, i18n: true}
         - label: News
           name: news
           widget: list
+          i18n: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -29,6 +48,7 @@ collections:
         - label: Stats
           name: stats
           widget: list
+          i18n: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -37,6 +57,7 @@ collections:
         - label: Sections
           name: sections
           widget: list
+          i18n: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -58,3 +79,23 @@ collections:
                 - {label: Title color, name: title_color, widget: color}
                 - {label: Description color, name: description_color, widget: color}
                 - {label: Button background color, name: button_background_color, widget: color}
+- label: "Components"
+  name: "components"
+  i18n:
+    structure: single_file
+    locales: [en, fr]
+  files:
+    - label: "Navbar"
+      name: "navbar"
+      file: "site/content/components/navbar.json"
+      i18n: true
+      fields:
+        - {label: Pages, name: pages, widget: relation, multiple: true, collection: "pages", search_fields: ["*"], value_field: "*"}
+        - {label: Link, name: link, widget: string}
+    - label: "Footer"
+      name: "footer"
+      file: "site/content/components/footer.json"
+      i18n: true
+      fields:
+        - {label: Title, name: title, widget: string, i18n: true}
+        - {label: Link, name: link, widget: string}
