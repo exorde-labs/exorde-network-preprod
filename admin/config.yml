@@ -31,7 +31,7 @@ collections:
   files:
     - label: "Homepage"
       name: "home"
-      file: "site/content/homepage.yml"
+      file: "site/content/homepage.json"
       i18n: true
       fields:
         - {label: Title, name: title, widget: string, i18n: true}
