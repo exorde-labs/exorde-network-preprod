@@ -52,8 +52,14 @@ collections:
           required: false
           fields:
             - {label: Title, name: title, widget: string}
+            - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Title color (dark mode), name: title_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Number, name: number, widget: number}
+            - {label: Number color, name: number_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Number color (dark mode), name: number_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Description, name: description, widget: text}
+            - {label: Description color, name: description_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Description color (dark mode), name: description_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
         - label: Sections
           name: sections
           widget: list
@@ -61,11 +67,17 @@ collections:
           required: false
           fields:
             - {label: Title, name: title, widget: string}
+            - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Title color (dark mode), name: title_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Keyword, name: keyword, widget: string}
+            - {label: Keyword color, name: keyword_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Keyword color (dark mode), name: keyword_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Description, name: description, widget: text}
-            - {label: Background color, name: background_color, widget: color}
-            - {label: Title color, name: title_color, widget: color}
-            - {label: Keyword color, name: keyword_color, widget: color}
+            - {label: Description color, name: description_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Description color (dark mode), name: description_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Background color, name: background_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Background color (dark mode), name: background_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Card alignment, name: align, widget: select, options: ["left", "alternate", "right"]}
             - label: Cards
               name: cards
               widget: list
@@ -74,11 +86,50 @@ collections:
                 - {label: Description, name: description, widget: markdown}
                 - {label: Icon, name: icon, widget: image}
                 - {label: Button Label, name: button_label, widget: string}
-                - {label: Align, name: align, widget: select, options: ["left", "alternate", "right"]}
-                - {label: Icon color, name: icon_color, widget: color}
-                - {label: Title color, name: title_color, widget: color}
-                - {label: Description color, name: description_color, widget: color}
-                - {label: Button background color, name: button_background_color, widget: color}
+                - {label: Icon color, name: icon_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Icon color (dark mode), name: icon_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Title color (dark mode), name: title_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Description color, name: description_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Description color (dark mode), name: description_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Button background color, name: button_background_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+                - {label: Button background color (dark mode), name: button_background_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+        - label: Use cases
+          name: use_cases
+          widget: object
+          summary: Use cases section
+          i18n: true
+          fields:
+            - {label: Title, name: title, widget: string, i18n: true}
+            - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Title color (dark mode), name: title_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Keyword, name: keyword, widget: string, i18n: true}
+            - {label: Keyword color, name: keyword_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Keyword color (dark mode), name: keyword_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Description, name: description, widget: text, i18n: true}
+            - {label: Description color, name: description_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Description color (dark mode), name: description_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Background color, name: background_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Background color (dark mode), name: background_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - label: Cards
+              name: cards
+              widget: list
+              i18n: true
+              fields:
+                - {label: Title, name: title, widget: relation, collection: "use_cases", search_fields: ["title"], value_field: "title"}
+                - {label: Image, name: image, widget: relation, collection: "use_cases", search_fields: ["thumbnail"], value_field: "thumbnail"}
+                - {label: Link, name: link, widget: relation, collection: "use_cases", search_fields: ["slug"], value_field: "slug"}
+- label: "Use cases"
+  name: "use_cases"
+  i18n: true
+  folder: "site/use-cases"
+  create: true
+  fields:
+    - {label: "Title", name: "title", widget: "string", i18n: true}
+    - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
+    - {label: "Featured Image", name: "thumbnail", widget: "image", i18n: duplicate}
+    - {label: "Body", name: "body", widget: "markdown", i18n: true}
+    - {label: "Slug", name: "slug", widget: "string", i18n: true}
 - label: "Components"
   name: "components"
   i18n:
@@ -90,8 +141,10 @@ collections:
       file: "site/content/components/navbar.json"
       i18n: true
       fields:
-        - {label: Pages, name: pages, widget: relation, multiple: true, collection: "pages", search_fields: ["*"], value_field: "*"}
-        - {label: Link, name: link, widget: string}
+        - {label: Background color, name: background_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+        - {label: Background color (dark mode), name: background_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+        - {label: Text color, name: text_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+        - {label: Text color (dark mode), name: text_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
     - label: "Footer"
       name: "footer"
       file: "site/content/components/footer.json"
@@ -99,3 +152,16 @@ collections:
       fields:
         - {label: Title, name: title, widget: string, i18n: true}
         - {label: Link, name: link, widget: string}
+- label: "Style"
+  name: "style"
+  files:
+    - label: Colors
+      name: colors
+      file: "site/style/colors.json"
+      fields:
+        - label: Colors
+          name: colors
+          widget: list
+          fields:
+            - {label: Name, name: name, widget: string}
+        
