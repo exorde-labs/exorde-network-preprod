@@ -34,6 +34,15 @@ collections:
       file: "site/content/homepage.json"
       i18n: true
       fields:
+        - label: SEO
+          name: seo
+          widget: object
+          i18n: true
+          collapsed: true
+          fields:
+            - {label: Title, name: title, widget: string, i18n: true}
+            - {label: Description, name: description, widget: text, i18n: true}
+            - {label: Image, name: image, widget: image, i18n: true}
         - {label: Title, name: title, widget: string, i18n: true}
         - {label: Intro, name: intro, widget: text, i18n: true}
         - label: News
@@ -125,11 +134,19 @@ collections:
   folder: "site/use-cases"
   create: true
   fields:
+    - label: SEO
+      name: seo
+      widget: object
+      i18n: true
+      collapsed: true
+      fields:
+        - {label: Title, name: title, widget: string, i18n: true}
+        - {label: Description, name: description, widget: text, i18n: true}
     - {label: "Title", name: "title", widget: "string", i18n: true}
     - {label: "Publish Date", name: "date", widget: "datetime", i18n: duplicate}
     - {label: "Featured Image", name: "thumbnail", widget: "image", i18n: duplicate}
     - {label: "Body", name: "body", widget: "markdown", i18n: true}
-    - {label: "Slug", name: "slug", widget: "string", i18n: true}
+    - {label: "Slug", name: "slug", widget: "string", i18n: duplicate}
 - label: "Components"
   name: "components"
   i18n:
@@ -150,8 +167,38 @@ collections:
       file: "site/content/components/footer.json"
       i18n: true
       fields:
-        - {label: Title, name: title, widget: string, i18n: true}
-        - {label: Link, name: link, widget: string}
+        - {label: Logo, name: logo, widget: image, i18n: duplicate}
+        - {label: background_color, name: background_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - {label: background_color_dark, name: background_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - {label: text_color, name: text_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - {label: text_color_dark, name: text_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - {label: category_color, name: category_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - {label: category_color_dark, name: category_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+        - label: Categories
+          name: categories
+          widget: list
+          i18n: true
+          fields:
+            - {label: Title, name: title, widget: string, i18n: true}
+            - label: Items
+              name: items
+              widget: list
+              i18n: true
+              fields:
+                - {label: Label, name: label, widget: string, i18n: true}
+                - {label: Link, name: link, widget: string, i18n: true}
+                - {label: External, name: external, widget: boolean, i18n: duplicate}
+        - {label: Copyright, name: copyright, widget: string, i18n: true }
+        - label: Socials
+          name: socials
+          widget: list
+          i18n: true
+          fields:
+            - {label: Id, name: id, widget: string, i18n: duplicate}
+            - {label: Link, name: link, widget: string, i18n: true}
+            - {label: Icon, name: icon, widget: image, i18n: duplicate}
+            - {label: Icon color, name: icon_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
+            - {label: Icon color (dark theme), name: icon_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
 - label: "Style"
   name: "style"
   files:
