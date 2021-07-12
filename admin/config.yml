@@ -49,6 +49,7 @@ collections:
           name: news
           widget: list
           i18n: true
+          collapsed: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -58,6 +59,7 @@ collections:
           name: stats
           widget: list
           i18n: true
+          collapsed: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -73,6 +75,7 @@ collections:
           name: sections
           widget: list
           i18n: true
+          collapsed: true
           required: false
           fields:
             - {label: Title, name: title, widget: string}
@@ -90,6 +93,7 @@ collections:
             - label: Cards
               name: cards
               widget: list
+              collapsed: true
               fields:
                 - {label: Title, name: title, widget: string}
                 - {label: Description, name: description, widget: markdown}
@@ -108,6 +112,7 @@ collections:
           widget: object
           summary: Use cases section
           i18n: true
+          collapsed: true
           fields:
             - {label: Title, name: title, widget: string, i18n: true}
             - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name", i18n: duplicate}
@@ -124,6 +129,7 @@ collections:
               name: cards
               widget: list
               i18n: true
+              collapsed: true
               fields:
                 - {label: Title, name: title, widget: relation, collection: "use_cases", search_fields: ["title"], value_field: "title"}
                 - {label: Image, name: image, widget: relation, collection: "use_cases", search_fields: ["thumbnail"], value_field: "thumbnail"}
