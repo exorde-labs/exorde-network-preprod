@@ -65,9 +65,9 @@ collections:
             - {label: Title, name: title, widget: string}
             - {label: Title color, name: title_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Title color (dark mode), name: title_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
-            - {label: Number, name: number, widget: number}
-            - {label: Number color, name: number_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
-            - {label: Number color (dark mode), name: number_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Indicator, name: indicator, widget: string}
+            - {label: Indicator color, name: indicator_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
+            - {label: Indicator color (dark mode), name: indicator_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Description, name: description, widget: text}
             - {label: Description color, name: description_color, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
             - {label: Description color (dark mode), name: description_color_dark, widget: relation, collection: "style", search_fields: ["colors.*.name"], value_field: "colors.*.name"}
